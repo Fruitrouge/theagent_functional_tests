@@ -1,14 +1,18 @@
 package com.theagent.login;
 
+import com.google.common.collect.ImmutableMap;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.File;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -23,8 +27,7 @@ public class FruitRougeTest {
     @Before
     public void setUp() throws Exception {
         baseUrl = "http://mlamamra.theagent.fruitrouge.com";
-        driver = new FirefoxDriver();/*new RemoteWebDriver(new URL("http://192.168.5.65:4444/wd/hub"),
-                                    DesiredCapabilities.firefox());*/
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -37,6 +40,7 @@ public class FruitRougeTest {
         driver.findElement(By.id("password")).sendKeys("admin");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Assert.assertEquals("matthieu@theagent.com", driver.findElement(By.cssSelector("span.userName")).getText());
+        Thread.sleep(Integer.MAX_VALUE);
     }
 
     @After
