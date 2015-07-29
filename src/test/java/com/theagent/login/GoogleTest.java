@@ -1,14 +1,14 @@
 package com.theagent.login;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.fail;
 
 public class GoogleTest {
   private WebDriver driver;
@@ -18,7 +18,7 @@ public class GoogleTest {
 
   @Before
   public void setUp() throws Exception {
-    driver = new ChromeDriver();
+    driver = new FirefoxDriver();
     baseUrl = "https://www.google.fr/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
