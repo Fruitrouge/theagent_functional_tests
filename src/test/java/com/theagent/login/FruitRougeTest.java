@@ -1,22 +1,13 @@
 package com.theagent.login;
 
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableMap;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-import java.io.File;
-import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
@@ -30,7 +21,7 @@ public class FruitRougeTest {
 
     @Before
     public void setUp() throws Exception {
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         baseUrl = "http://mlamamra.theagent.fruitrouge.com/";
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
