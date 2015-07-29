@@ -50,11 +50,11 @@ public class FruitRougeTest {
                 .pollingEvery(5, TimeUnit.SECONDS)
                 .ignoring(NoSuchElementException.class);
 
-        WebElement foo = wait.until((driver) -> {
+        WebElement userNameElement = wait.until((driver) -> {
                     return driver.findElement(By.cssSelector("body > nav > div.container > ul > li:nth-child(2) > a > span.userName"));
                 }
         );
-        assertEquals("matthieu@theagent.com", driver.findElement(By.cssSelector("body > nav > div.container > ul > li:nth-child(2) > a > span.userName")).getText());
+        assertEquals("matthieu@theagent.com", userNameElement.getText());
     }
 
     @After
