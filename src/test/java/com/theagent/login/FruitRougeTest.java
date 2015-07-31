@@ -43,7 +43,7 @@ public class FruitRougeTest {
                 .ignoring(NoSuchElementException.class);
 
         WebElement userNameElement = wait.until((driver) -> {
-                    return driver.findElement(By.cssSelector("body > nav > div.container > ul > li:nth-child(2) > a > span.userName"));
+                    return driver.findElement(By.cssSelector("*> span.userName"));
                 }
         );
         assertEquals("matthieu@theagent.com", userNameElement.getText());
